@@ -1,0 +1,97 @@
+version: "4.1"
+name: LPrunTest
+type: ARM
+deviceName: null
+packDir: null
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: Common
+      files:
+        - path: ../System/system_hc32l110.c
+        - path: ../System/startup_hc32l110.s
+      folders: []
+    - name: User
+      files:
+        - path: ../Src/main.c
+      folders: []
+dependenceList: []
+outDir: .
+miscInfo:
+  uid: 36bcf0031e18a3008bbdaa90a96a1115
+targets:
+  Project:
+    cppPreprocessAttrs:
+      defineList:
+        - HC32L110C6PA
+      incList:
+        - ../Inc
+        - ../../../Drivers/Core
+        - ../../../Drivers/Device/Include
+      libList:
+        - ../../../Drivers/Device/Source
+    excludeList: []
+    toolchain: GCC
+    toolchainConfigMap:
+      GCC:
+        archExtensions: ""
+        cpuType: Cortex-M0+
+        floatingPointHardware: none
+        options:
+          version: 5
+          afterBuildTasks:
+            - name: make disasm
+              abortAfterFailed: false
+              command: arm-none-eabi-objdump -S ${OutDir}\${ProjectName}.elf > ${OutDir}\${ProjectName}.lst
+              disable: false
+          asm-compiler: {}
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            language-c: c23
+            language-cpp: c++23
+            one-elf-section-per-data: true
+            one-elf-section-per-function: true
+            optimization: level-size
+            optimization-lto: true
+            warnings: all-warnings
+          global:
+            $float-abi-type: softfp
+            arm-thumb-mode: thumb
+            output-debug-info: enable
+            use-newlib-nano: true
+          linker:
+            $toolName: auto
+            LD_FLAGS: -Wl,--no-warn-rwx-segments
+            LIB_FLAGS: -lm
+            output-format: elf
+            remove-unused-input-sections: true
+        scatterFilePath: ../System/hc32l110.ld
+        storageLayout:
+          RAM: []
+          ROM: []
+        useCustomScatterFile: true
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: HC32L110C6PA
+          vendor: null
+        otherCmds: ""
+        proType: 1
+        speed: 1000
+      OpenOCD:
+        baseAddr: "0x00000000"
+        bin: ""
+        interface: cmsis-dap
+        target: HC32L110C6PA
+      pyOCD:
+        baseAddr: "0x00000000"
+        bin: ""
+        config: .eide/project.pyocd.yaml
+        otherCmds: --pack=..\..\..\Packs\HC32L110_DFP.pack
+        speed: 4M
+        targetName: HC32L110C6PA
+    uploader: pyOCD

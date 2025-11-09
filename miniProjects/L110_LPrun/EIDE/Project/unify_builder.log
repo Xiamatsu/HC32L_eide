@@ -1,0 +1,10 @@
+[2025-11-09 18:20:18]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'c:\MCU\hc32mini\miniProjects\L110_LPrun\Src\main.c': object (.o) file not exist
+'c:\MCU\hc32mini\miniProjects\L110_LPrun\System\startup_hc32l110.s': object (.o) file not exist
+'c:\MCU\hc32mini\miniProjects\L110_LPrun\System\system_hc32l110.c': object (.o) file not exist
+
+[2025-11-09 18:20:18]	[done]
+	build successfully !
+

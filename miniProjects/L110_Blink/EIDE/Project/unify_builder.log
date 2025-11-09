@@ -1,0 +1,10 @@
+[2025-11-09 13:29:29]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'c:\MCU\hc32mini\Drivers\Device\Source\system_hc32l110.c': object (.o) file not exist
+'c:\MCU\hc32mini\Drivers\Device\Startup\startup_hc32l110.s': object (.o) file not exist
+'c:\MCU\hc32mini\miniProjects\L110_blink\Src\main.c': object (.o) file not exist
+
+[2025-11-09 13:29:29]	[done]
+	build successfully !
+
