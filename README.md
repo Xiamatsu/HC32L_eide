@@ -1,4 +1,6 @@
-###  BETA v0.1  ( только пока  HC32L110 )
+###  BETA v0.1  ( только пока  HC32L110  )
+
+- работает пример Blink  на  P34
 
 ###  Библиотека примеров - HC32L110   VSCode + EIDE + PyOCD (JLink,OpenOCD)
 
