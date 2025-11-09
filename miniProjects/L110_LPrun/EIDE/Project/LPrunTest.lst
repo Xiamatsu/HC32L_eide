@@ -1,5 +1,5 @@
 
-c:\MCU\hc32mini\miniProjects\L110_LPrun\EIDE\Project\LPrunTest.elf:     file format elf32-littlearm
+c:\ACHIP\Xiamatsu\HC32L_eide\miniProjects\L110_LPrun\EIDE\Project\LPrunTest.elf:     file format elf32-littlearm
 
 
 Disassembly of section .text:
@@ -164,7 +164,7 @@ int main(void) {
  1b8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
     M0P_CLOCK->PERI_CLKEN_f.GPIO = 1;    //  enable CLK to GPIO
  1ba:	2380      	movs	r3, #128	@ 0x80
- 1bc:	4c7e      	ldr	r4, [pc, #504]	@ (3b8 <main.c.037c0908+0x18b>)
+ 1bc:	4c7e      	ldr	r4, [pc, #504]	@ (3b8 <main.c.24a403a3+0x18b>)
     M0P_GPIO->P2ADS = 0x00;
  1be:	20c6      	movs	r0, #198	@ 0xc6
     M0P_CLOCK->PERI_CLKEN_f.GPIO = 1;    //  enable CLK to GPIO
@@ -178,8 +178,8 @@ int main(void) {
     M0P_CLOCK->PERI_CLKEN_f.GPIO = 1;    //  enable CLK to GPIO
  1ca:	6223      	str	r3, [r4, #32]
     M0P_GPIO->P0ADS = 0x00;
- 1cc:	497b      	ldr	r1, [pc, #492]	@ (3bc <main.c.037c0908+0x18f>)
- 1ce:	4b7c      	ldr	r3, [pc, #496]	@ (3c0 <main.c.037c0908+0x193>)
+ 1cc:	497b      	ldr	r1, [pc, #492]	@ (3bc <main.c.24a403a3+0x18f>)
+ 1ce:	4b7c      	ldr	r3, [pc, #496]	@ (3c0 <main.c.24a403a3+0x193>)
     M0P_GPIO->P2ADS = 0x00;
  1d0:	0040      	lsls	r0, r0, #1
     M0P_GPIO->P0ADS = 0x00;
@@ -260,9 +260,9 @@ int main(void) {
  226:	505a      	str	r2, [r3, r1]
 	M0P_CLOCK->PERI_CLKEN_f.GPIO = 0;    //  disable CLK to GPIO
  228:	6a22      	ldr	r2, [r4, #32]
- 22a:	4966      	ldr	r1, [pc, #408]	@ (3c4 <main.c.037c0908+0x197>)
+ 22a:	4966      	ldr	r1, [pc, #408]	@ (3c4 <main.c.24a403a3+0x197>)
 	M0P_CLOCK->RCL_CR_f.STARTUP = 1;  // 16 cycles
- 22c:	4866      	ldr	r0, [pc, #408]	@ (3c8 <main.c.037c0908+0x19b>)
+ 22c:	4866      	ldr	r0, [pc, #408]	@ (3c8 <main.c.24a403a3+0x19b>)
 	M0P_CLOCK->PERI_CLKEN_f.GPIO = 0;    //  disable CLK to GPIO
  22e:	400a      	ands	r2, r1
 	M0P_CLOCK->RCL_CR_f.TRIM = 1;
@@ -272,7 +272,7 @@ int main(void) {
 	M0P_CLOCK->RCL_CR_f.TRIM = 1;
  234:	6962      	ldr	r2, [r4, #20]
 	M0P_CLOCK->SYSCTRL2 = 0xA5A5;
- 236:	4f65      	ldr	r7, [pc, #404]	@ (3cc <main.c.037c0908+0x19f>)
+ 236:	4f65      	ldr	r7, [pc, #404]	@ (3cc <main.c.24a403a3+0x19f>)
 	M0P_CLOCK->RCL_CR_f.TRIM = 1;
  238:	0a92      	lsrs	r2, r2, #10
  23a:	0292      	lsls	r2, r2, #10
@@ -286,7 +286,7 @@ int main(void) {
  248:	430a      	orrs	r2, r1
  24a:	6162      	str	r2, [r4, #20]
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
- 24c:	4a60      	ldr	r2, [pc, #384]	@ (3d0 <main.c.037c0908+0x1a3>)
+ 24c:	4a60      	ldr	r2, [pc, #384]	@ (3d0 <main.c.24a403a3+0x1a3>)
  24e:	60a2      	str	r2, [r4, #8]
 	M0P_CLOCK->SYSCTRL0_f.RCL_EN = 1;
  250:	2204      	movs	r2, #4
@@ -299,11 +299,11 @@ int main(void) {
 	while (M0P_CLOCK->RCL_CR_f.STABLE == 0);
  25a:	6962      	ldr	r2, [r4, #20]
  25c:	04d2      	lsls	r2, r2, #19
- 25e:	d5fc      	bpl.n	25a <main.c.037c0908+0x2d>
+ 25e:	d5fc      	bpl.n	25a <main.c.24a403a3+0x2d>
 	M0P_CLOCK->SYSCTRL0_f.CLK_SW4_SEL = 2;
  260:	2230      	movs	r2, #48	@ 0x30
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
- 262:	4d5b      	ldr	r5, [pc, #364]	@ (3d0 <main.c.037c0908+0x1a3>)
+ 262:	4d5b      	ldr	r5, [pc, #364]	@ (3d0 <main.c.24a403a3+0x1a3>)
     M0P_GPIO->P2OD_f.P24 = 0;            //  PushPull ( not open drain )
  264:	26d6      	movs	r6, #214	@ 0xd6
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
@@ -346,7 +346,7 @@ int main(void) {
  294:	4391      	bics	r1, r2
  296:	5159      	str	r1, [r3, r5]
     M0P_GPIO->P24_SEL = 3;               //  alternate HCLK_out
- 298:	494e      	ldr	r1, [pc, #312]	@ (3d4 <main.c.037c0908+0x1a7>)
+ 298:	494e      	ldr	r1, [pc, #312]	@ (3d4 <main.c.24a403a3+0x1a7>)
  29a:	3d8a      	subs	r5, #138	@ 0x8a
  29c:	3dff      	subs	r5, #255	@ 0xff
  29e:	600d      	str	r5, [r1, #0]
@@ -383,7 +383,7 @@ int main(void) {
  2cc:	0092      	lsls	r2, r2, #2
  2ce:	5899      	ldr	r1, [r3, r2]
 	M0P_CLOCK->SYSCTRL0_f.HCLK_PRS = k;
- 2d0:	4e41      	ldr	r6, [pc, #260]	@ (3d8 <main.c.037c0908+0x1ab>)
+ 2d0:	4e41      	ldr	r6, [pc, #260]	@ (3d8 <main.c.24a403a3+0x1ab>)
     M0P_GPIO->CTRL1_f.HCLK_SEL = 0;
  2d2:	4001      	ands	r1, r0
  2d4:	5099      	str	r1, [r3, r2]
@@ -400,9 +400,9 @@ int main(void) {
  2e2:	01c0      	lsls	r0, r0, #7
  2e4:	f7ff feec 	bl	c0 <delay>
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
- 2e8:	4b39      	ldr	r3, [pc, #228]	@ (3d0 <main.c.037c0908+0x1a3>)
+ 2e8:	4b39      	ldr	r3, [pc, #228]	@ (3d0 <main.c.24a403a3+0x1a3>)
 	M0P_LPTIMER->CR_f.GATE_P = 0;
- 2ea:	493c      	ldr	r1, [pc, #240]	@ (3dc <main.c.037c0908+0x1af>)
+ 2ea:	493c      	ldr	r1, [pc, #240]	@ (3dc <main.c.24a403a3+0x1af>)
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
  2ec:	60a3      	str	r3, [r4, #8]
 	M0P_CLOCK->SYSCTRL2 = 0xA5A5;
@@ -419,14 +419,14 @@ int main(void) {
  2fa:	6a22      	ldr	r2, [r4, #32]
  2fc:	009b      	lsls	r3, r3, #2
 	M0P_LPTIMER->CR_f.GATE_P = 0;
- 2fe:	4d38      	ldr	r5, [pc, #224]	@ (3e0 <main.c.037c0908+0x1b3>)
+ 2fe:	4d38      	ldr	r5, [pc, #224]	@ (3e0 <main.c.24a403a3+0x1b3>)
 	M0P_CLOCK->PERI_CLKEN_f.LPTIM = 1;
  300:	4313      	orrs	r3, r2
  302:	6223      	str	r3, [r4, #32]
 	M0P_LPTIMER->CR_f.GATE_P = 0;
  304:	6eeb      	ldr	r3, [r5, #108]	@ 0x6c
 	M0P_LPTIMER->CR_f.GATE = 0;
- 306:	4a37      	ldr	r2, [pc, #220]	@ (3e4 <main.c.037c0908+0x1b7>)
+ 306:	4a37      	ldr	r2, [pc, #220]	@ (3e4 <main.c.24a403a3+0x1b7>)
 	M0P_LPTIMER->CR_f.GATE_P = 0;
  308:	400b      	ands	r3, r1
  30a:	66eb      	str	r3, [r5, #108]	@ 0x6c
@@ -468,13 +468,13 @@ __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
     __COMPILER_BARRIER();
     NVIC->ISER[0U] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
  33e:	2280      	movs	r2, #128	@ 0x80
- 340:	4b29      	ldr	r3, [pc, #164]	@ (3e8 <main.c.037c0908+0x1bb>)
+ 340:	4b29      	ldr	r3, [pc, #164]	@ (3e8 <main.c.24a403a3+0x1bb>)
  342:	0292      	lsls	r2, r2, #10
  344:	601a      	str	r2, [r3, #0]
 	while (M0P_LPTIMER->CR_f.WT_FLAG == 0);
  346:	6eeb      	ldr	r3, [r5, #108]	@ 0x6c
  348:	061b      	lsls	r3, r3, #24
- 34a:	d5fc      	bpl.n	346 <main.c.037c0908+0x119>
+ 34a:	d5fc      	bpl.n	346 <main.c.24a403a3+0x119>
 	M0P_LPTIMER->ARR_f.ARR = 0xE000; //  count from 0xF800 to 0xFFFF  (2048)
  34c:	22e0      	movs	r2, #224	@ 0xe0
  34e:	6e6b      	ldr	r3, [r5, #100]	@ 0x64
@@ -487,7 +487,7 @@ __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
  35a:	662a      	str	r2, [r5, #96]	@ 0x60
 	SCB->SCR = 4;
  35c:	2204      	movs	r2, #4
- 35e:	4b23      	ldr	r3, [pc, #140]	@ (3ec <main.c.037c0908+0x1bf>)
+ 35e:	4b23      	ldr	r3, [pc, #140]	@ (3ec <main.c.24a403a3+0x1bf>)
  360:	611a      	str	r2, [r3, #16]
 	M0P_CLOCK->PERI_CLKEN_f.LPTIM = 1;
  362:	2280      	movs	r2, #128	@ 0x80
@@ -513,13 +513,13 @@ __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
  37c:	66eb      	str	r3, [r5, #108]	@ 0x6c
 	M0P_CLOCK->PERI_CLKEN_f.LPTIM = 0;
  37e:	6a23      	ldr	r3, [r4, #32]
- 380:	4a16      	ldr	r2, [pc, #88]	@ (3dc <main.c.037c0908+0x1af>)
+ 380:	4a16      	ldr	r2, [pc, #88]	@ (3dc <main.c.24a403a3+0x1af>)
  382:	4013      	ands	r3, r2
  384:	6223      	str	r3, [r4, #32]
 		delay(100*xPrefix);
  386:	f7ff fe9b 	bl	c0 <delay>
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
- 38a:	4b11      	ldr	r3, [pc, #68]	@ (3d0 <main.c.037c0908+0x1a3>)
+ 38a:	4b11      	ldr	r3, [pc, #68]	@ (3d0 <main.c.24a403a3+0x1a3>)
 		delay(8000*xPrefix);
  38c:	20fa      	movs	r0, #250	@ 0xfa
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
@@ -539,7 +539,7 @@ __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
 		delay(8000*xPrefix);
  39e:	f7ff fe8f 	bl	c0 <delay>
 	M0P_CLOCK->SYSCTRL2 = 0x5A5A;
- 3a2:	4b0b      	ldr	r3, [pc, #44]	@ (3d0 <main.c.037c0908+0x1a3>)
+ 3a2:	4b0b      	ldr	r3, [pc, #44]	@ (3d0 <main.c.24a403a3+0x1a3>)
  3a4:	60a3      	str	r3, [r4, #8]
 	M0P_CLOCK->SYSCTRL0_f.HCLK_PRS = k;
  3a6:	23a0      	movs	r3, #160	@ 0xa0
@@ -552,7 +552,7 @@ __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
  3b0:	4313      	orrs	r3, r2
  3b2:	6023      	str	r3, [r4, #0]
 	while(1) {
- 3b4:	e7d5      	b.n	362 <main.c.037c0908+0x135>
+ 3b4:	e7d5      	b.n	362 <main.c.24a403a3+0x135>
  3b6:	46c0      	nop			@ (mov r8, r8)
  3b8:	40002000 	.word	0x40002000
  3bc:	40020cfc 	.word	0x40020cfc

@@ -559,17 +559,17 @@ LOAD linker stubs
  .debug_line    0x000001b3       0x88 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
  .debug_line    0x0000023b      0x1dd ./Project/.obj/__/Src/main.o
 
-.debug_str      0x00000000     0x12d1
- .debug_str     0x00000000     0x12d1 ./Project/.obj/__/__/__/Drivers/Device/Source/system_hc32l110.o
-                                0x5d4 (size before relaxing)
- .debug_str     0x000012d1       0x8b ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
- .debug_str     0x000012d1     0x1269 ./Project/.obj/__/Src/main.o
+.debug_str      0x00000000     0x12c4
+ .debug_str     0x00000000     0x12c4 ./Project/.obj/__/__/__/Drivers/Device/Source/system_hc32l110.o
+                                0x5c7 (size before relaxing)
+ .debug_str     0x000012c4       0x7e ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
+ .debug_str     0x000012c4     0x125c ./Project/.obj/__/Src/main.o
 
 .debug_frame    0x00000000       0x70
  .debug_frame   0x00000000       0x30 ./Project/.obj/__/__/__/Drivers/Device/Source/system_hc32l110.o
  .debug_frame   0x00000030       0x40 ./Project/.obj/__/Src/main.o
 
 .debug_line_str
-                0x00000000       0x6f
+                0x00000000       0x62
  .debug_line_str
-                0x00000000       0x6f ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
+                0x00000000       0x62 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o

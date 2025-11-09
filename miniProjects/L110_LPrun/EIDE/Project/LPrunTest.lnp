@@ -1,4 +1,4 @@
--L../../../Drivers/Device/Source -mcpu=cortex-m0plus -mthumb -T c:/MCU/hc32mini/miniProjects/L110_LPrun/System/hc32l110.ld -Wl,--gc-sections -Wl,--print-memory-usage -flto --specs=nano.specs -Wl,--no-warn-rwx-segments
+-L../../../Drivers/Device/Source -mcpu=cortex-m0plus -mthumb -T c:/ACHIP/Xiamatsu/HC32L_eide/miniProjects/L110_LPrun/System/hc32l110.ld -Wl,--gc-sections -Wl,--print-memory-usage -flto --specs=nano.specs -Wl,--no-warn-rwx-segments
 -Wl,-Map=./Project/LPrunTest.map
 -o ./Project/LPrunTest.elf ./Project/.obj/__/Src/main.o
 ./Project/.obj/__/System/startup_hc32l110.o

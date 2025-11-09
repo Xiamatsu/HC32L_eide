@@ -7,7 +7,7 @@
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 16,
-    "rootDir": "c:\\MCU\\hc32mini\\miniProjects\\L110_blink\\EIDE",
+    "rootDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_Blink\\EIDE",
     "dumpPath": "Project",
     "outDir": "Project",
     "incDirs": [
@@ -67,20 +67,20 @@
             "output-format": "elf",
             "remove-unused-input-sections": true,
             "link-scatter": [
-                "c:/MCU/hc32mini/Drivers/Device/LDScript/hc32l110.ld"
+                "c:/ACHIP/Xiamatsu/HC32L_eide/Drivers/Device/LDScript/hc32l110.ld"
             ]
         }
     },
     "env": {
-        "workspaceFolder": "c:\\MCU\\hc32mini\\miniProjects\\L110_blink\\EIDE",
+        "workspaceFolder": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_Blink\\EIDE",
         "workspaceFolderBasename": "EIDE",
-        "OutDir": "c:\\MCU\\hc32mini\\miniProjects\\L110_blink\\EIDE\\.\\Project",
+        "OutDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_Blink\\EIDE\\.\\Project",
         "OutDirRoot": ".",
         "OutDirBase": ".\\Project",
         "ProjectName": "Blink34",
         "ConfigName": "Project",
-        "ProjectRoot": "c:\\MCU\\hc32mini\\miniProjects\\L110_blink\\EIDE",
-        "ExecutableName": "c:\\MCU\\hc32mini\\miniProjects\\L110_blink\\EIDE\\.\\Project\\Blink34",
+        "ProjectRoot": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_Blink\\EIDE",
+        "ExecutableName": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_Blink\\EIDE\\.\\Project\\Blink34",
         "ChipPackDir": "",
         "ChipName": "",
         "SYS_Platform": "win32",

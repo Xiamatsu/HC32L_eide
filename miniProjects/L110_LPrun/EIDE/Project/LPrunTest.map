@@ -58,9 +58,9 @@ Discarded input sections
                 0x00000000       0xd6 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
  .ARM.attributes
                 0x00000000       0x1b C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
- .bss           0x00000000        0x0 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
- .comment       0x00000000       0x47 C:\Users\User\AppData\Local\Temp\ccuFhmRa.debug.temp.o
- .comment       0x00000000       0x47 C:\Users\User\AppData\Local\Temp\ccmIO0rS.debug.temp.o
+ .bss           0x00000000        0x0 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
+ .comment       0x00000000       0x47 C:\Users\User\AppData\Local\Temp\ccO3egBz.debug.temp.o
+ .comment       0x00000000       0x47 C:\Users\User\AppData\Local\Temp\ccUjRs8G.debug.temp.o
  .text          0x00000000        0x0 ./Project/.obj/__/System/startup_hc32l110.o
  .data          0x00000000        0x0 ./Project/.obj/__/System/startup_hc32l110.o
  .bss           0x00000000        0x0 ./Project/.obj/__/System/startup_hc32l110.o
@@ -302,9 +302,9 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
 LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
 LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
 LOAD ./Project/.obj/__/Src/main.o
-LOAD C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
-LOAD C:\Users\User\AppData\Local\Temp\ccuFhmRa.debug.temp.o
-LOAD C:\Users\User\AppData\Local\Temp\ccmIO0rS.debug.temp.o
+LOAD C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
+LOAD C:\Users\User\AppData\Local\Temp\ccO3egBz.debug.temp.o
+LOAD C:\Users\User\AppData\Local\Temp\ccUjRs8G.debug.temp.o
 LOAD ./Project/.obj/__/System/startup_hc32l110.o
 LOAD ./Project/.obj/__/System/system_hc32l110.o
 LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
@@ -330,7 +330,7 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
 
 .text           0x000000c0      0x3b4
  *(.text)
- .text          0x000000c0       0x60 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+ .text          0x000000c0       0x60 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
                 0x000000d2                LPTIM_IRQHandler
                 0x000000ec                SystemInit
  *(.text*)
@@ -342,7 +342,7 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
                 0x00000168       0x2c C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
  .text.frame_dummy
                 0x00000194       0x24 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
- .text.startup  0x000001b8      0x238 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+ .text.startup  0x000001b8      0x238 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
                 0x000001b8                main
  .text.Reset_Handler
                 0x000003f0       0x68 ./Project/.obj/__/System/startup_hc32l110.o
@@ -446,7 +446,7 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
                 0x20000000                        __data_start__ = .
  *(vtable)
  *(.data)
- .data          0x20000000        0x4 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+ .data          0x20000000        0x4 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
  *(.data*)
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        __data_end__ = .
@@ -496,7 +496,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000001e       0x2c C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
  .ARM.attributes
-                0x0000004a       0x2a C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+                0x0000004a       0x2a C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
  .ARM.attributes
                 0x00000074       0x22 ./Project/.obj/__/System/startup_hc32l110.o
  .ARM.attributes
@@ -505,63 +505,63 @@ LOAD linker stubs
                 0x000000c2       0x1e C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtn.o
 
 .comment        0x00000000       0x46
- .comment       0x00000000       0x46 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+ .comment       0x00000000       0x46 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
                                  0x47 (size before relaxing)
 
 .debug_info     0x00000000     0x454d
- .debug_info    0x00000000      0x22d C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
- .debug_info    0x0000022d     0x3a8e C:\Users\User\AppData\Local\Temp\ccuFhmRa.debug.temp.o
-                0x0000022d                main.c.037c0908
- .debug_info    0x00003cbb      0x862 C:\Users\User\AppData\Local\Temp\ccmIO0rS.debug.temp.o
-                0x00003cbb                system_hc32l110.c.c282c502
+ .debug_info    0x00000000      0x22d C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
+ .debug_info    0x0000022d     0x3a8e C:\Users\User\AppData\Local\Temp\ccO3egBz.debug.temp.o
+                0x0000022d                main.c.24a403a3
+ .debug_info    0x00003cbb      0x862 C:\Users\User\AppData\Local\Temp\ccUjRs8G.debug.temp.o
+                0x00003cbb                system_hc32l110.c.861b24d0
  .debug_info    0x0000451d       0x30 ./Project/.obj/__/System/startup_hc32l110.o
 
 .debug_abbrev   0x00000000      0x407
- .debug_abbrev  0x00000000       0xdf C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
- .debug_abbrev  0x000000df      0x1e8 C:\Users\User\AppData\Local\Temp\ccuFhmRa.debug.temp.o
- .debug_abbrev  0x000002c7      0x11c C:\Users\User\AppData\Local\Temp\ccmIO0rS.debug.temp.o
+ .debug_abbrev  0x00000000       0xdf C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
+ .debug_abbrev  0x000000df      0x1e8 C:\Users\User\AppData\Local\Temp\ccO3egBz.debug.temp.o
+ .debug_abbrev  0x000002c7      0x11c C:\Users\User\AppData\Local\Temp\ccUjRs8G.debug.temp.o
  .debug_abbrev  0x000003e3       0x24 ./Project/.obj/__/System/startup_hc32l110.o
 
 .debug_loclists
                 0x00000000       0x3c
  .debug_loclists
-                0x00000000       0x3c C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+                0x00000000       0x3c C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
 
 .debug_aranges  0x00000000       0x50
  .debug_aranges
-                0x00000000       0x28 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+                0x00000000       0x28 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
  .debug_aranges
                 0x00000028       0x28 ./Project/.obj/__/System/startup_hc32l110.o
 
 .debug_rnglists
                 0x00000000       0xe4
  .debug_rnglists
-                0x00000000       0xcb C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+                0x00000000       0xcb C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
  .debug_rnglists
                 0x000000cb       0x19 ./Project/.obj/__/System/startup_hc32l110.o
 
 .debug_line     0x00000000      0x6c1
- .debug_line    0x00000000      0x579 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
- .debug_line    0x00000579       0x5e C:\Users\User\AppData\Local\Temp\ccuFhmRa.debug.temp.o
- .debug_line    0x000005d7       0x5a C:\Users\User\AppData\Local\Temp\ccmIO0rS.debug.temp.o
+ .debug_line    0x00000000      0x579 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
+ .debug_line    0x00000579       0x5e C:\Users\User\AppData\Local\Temp\ccO3egBz.debug.temp.o
+ .debug_line    0x000005d7       0x5a C:\Users\User\AppData\Local\Temp\ccUjRs8G.debug.temp.o
  .debug_line    0x00000631       0x90 ./Project/.obj/__/System/startup_hc32l110.o
 
-.debug_str      0x00000000     0x1695
- .debug_str     0x00000000       0xea C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
- .debug_str     0x00000000     0x15cd C:\Users\User\AppData\Local\Temp\ccuFhmRa.debug.temp.o
- .debug_str     0x00000000      0x5b8 C:\Users\User\AppData\Local\Temp\ccmIO0rS.debug.temp.o
- .debug_str     0x00000000     0x1695 ./Project/.obj/__/System/startup_hc32l110.o
-                                 0x68 (size before relaxing)
+.debug_str      0x00000000     0x16a2
+ .debug_str     0x00000000       0xf7 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
+ .debug_str     0x00000000     0x15da C:\Users\User\AppData\Local\Temp\ccO3egBz.debug.temp.o
+ .debug_str     0x00000000      0x5c5 C:\Users\User\AppData\Local\Temp\ccUjRs8G.debug.temp.o
+ .debug_str     0x00000000     0x16a2 ./Project/.obj/__/System/startup_hc32l110.o
+                                 0x75 (size before relaxing)
 
 .debug_frame    0x00000000       0x64
- .debug_frame   0x00000000       0x64 C:\Users\User\AppData\Local\Temp\cc2grPJO.ltrans0.ltrans.o
+ .debug_frame   0x00000000       0x64 C:\Users\User\AppData\Local\Temp\ccIKhHij.ltrans0.ltrans.o
 
 .debug_line_str
-                0x00000000      0x16f
+                0x00000000      0x17c
  .debug_line_str
-                0x00000000      0x132 C:\Users\User\AppData\Local\Temp\ccuFhmRa.debug.temp.o
+                0x00000000      0x13f C:\Users\User\AppData\Local\Temp\ccO3egBz.debug.temp.o
  .debug_line_str
-                0x00000000      0x13b C:\Users\User\AppData\Local\Temp\ccmIO0rS.debug.temp.o
+                0x00000000      0x148 C:\Users\User\AppData\Local\Temp\ccUjRs8G.debug.temp.o
  .debug_line_str
-                0x00000000      0x16f ./Project/.obj/__/System/startup_hc32l110.o
-                                 0x4c (size before relaxing)
+                0x00000000      0x17c ./Project/.obj/__/System/startup_hc32l110.o
+                                 0x59 (size before relaxing)

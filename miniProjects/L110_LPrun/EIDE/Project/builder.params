@@ -7,7 +7,7 @@
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 16,
-    "rootDir": "c:\\MCU\\hc32mini\\miniProjects\\L110_LPrun\\EIDE",
+    "rootDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_LPrun\\EIDE",
     "dumpPath": "Project",
     "outDir": "Project",
     "incDirs": [
@@ -69,20 +69,20 @@
             "output-format": "elf",
             "remove-unused-input-sections": true,
             "link-scatter": [
-                "c:/MCU/hc32mini/miniProjects/L110_LPrun/System/hc32l110.ld"
+                "c:/ACHIP/Xiamatsu/HC32L_eide/miniProjects/L110_LPrun/System/hc32l110.ld"
             ]
         }
     },
     "env": {
-        "workspaceFolder": "c:\\MCU\\hc32mini\\miniProjects\\L110_LPrun\\EIDE",
+        "workspaceFolder": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_LPrun\\EIDE",
         "workspaceFolderBasename": "EIDE",
-        "OutDir": "c:\\MCU\\hc32mini\\miniProjects\\L110_LPrun\\EIDE\\.\\Project",
+        "OutDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_LPrun\\EIDE\\.\\Project",
         "OutDirRoot": ".",
         "OutDirBase": ".\\Project",
         "ProjectName": "LPrunTest",
         "ConfigName": "Project",
-        "ProjectRoot": "c:\\MCU\\hc32mini\\miniProjects\\L110_LPrun\\EIDE",
-        "ExecutableName": "c:\\MCU\\hc32mini\\miniProjects\\L110_LPrun\\EIDE\\.\\Project\\LPrunTest",
+        "ProjectRoot": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_LPrun\\EIDE",
+        "ExecutableName": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\miniProjects\\L110_LPrun\\EIDE\\.\\Project\\LPrunTest",
         "ChipPackDir": "",
         "ChipName": "",
         "SYS_Platform": "win32",
