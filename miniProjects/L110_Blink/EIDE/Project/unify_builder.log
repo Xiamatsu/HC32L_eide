@@ -1,10 +1,10 @@
-[2025-11-10 09:16:33]	[info] incremental build: 3 source files changed
+[2025-11-10 09:25:37]	[info] incremental build: 3 source files changed
 These source files will be recompiled
 ---
 'c:\ACHIP\Xiamatsu\HC32L_eide\Drivers\Device\Source\system_hc32l110.c': object (.o) file not exist
 'c:\ACHIP\Xiamatsu\HC32L_eide\Drivers\Device\Startup\startup_hc32l110.s': object (.o) file not exist
 'c:\ACHIP\Xiamatsu\HC32L_eide\miniProjects\L110_Blink\Src\main.c': object (.o) file not exist
 
-[2025-11-10 09:16:33]	[done]
+[2025-11-10 09:25:37]	[done]
 	build successfully !
 
