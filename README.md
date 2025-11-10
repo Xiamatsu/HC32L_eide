@@ -34,17 +34,20 @@
 Comm:    2xUART, LPUART, SPI, I2C
 Timers:  Base - 3, Adv - 3, LP - 1, PCA - 1(5ch), RTC, WDT
 Analog:  ADC 12bit, Comp - 2, LVD, BGR Vref, TempSensor
+Add:     Buzzer 3ch, CRC-16
 
 выпускается в 7 модификациях
-  HC32L110B4PA  - tssop-14;      16K Flash; 2K RAM
+  HC32L110B4PA  - tssop-16;      16K Flash; 2K RAM
   HC32L110C4PA  - tssop-20;      16K Flash; 2K RAM
   HC32L110C4UA  - qfn-20(3x3);   16K Flash; 2K RAM
-  HC32L110B6PA  - tssop-14;      32K Flash; 4K RAM
+  HC32L110B6PA  - tssop-16;      32K Flash; 4K RAM
   HC32L110B6YA  - csp-16;        32K Flash; 4K RAM
   HC32L110C6PA  - tssop-20;      32K Flash; 4K RAM
   HC32L110C6PA  - qfn-20(3x3);   32K Flash; 4K RAM
 
 особенности
+- Flash сразу - только по адресу 0x00000000 
+- установить Flash Latency = 1, при F > 24 MHz 
 - нет DMA
 - внутренний RCL(LSI) - 2 константы 32.768, 38.4 kHz   (min 19.7)
 - внутренний RCH(HSI) - 5 констант  4, 8, 16, 22.12, 24 MHz  (min 2.3)
@@ -75,3 +78,23 @@ Analog:  ADC 12bit, Comp - 2, LVD, BGR Vref, TempSensor
 
 Описание контроллеров для JLink в папке JLinkDevices<br>
 скопировать содержимое папки в  <USER>\AppData\Roaming\SEGGER\JLinkDevices
+
+###  HC32L130, HC32L136(+LCDC)
+```
+Cortex-M0+ 48MHz, 1.8-5.5V, 64K Flash, 8K RAM
+
+Добавлено (по сравнению с L110) :
+  DMA 2ch, PLL, FastIO, HDIV, CRC-32, Buzzer 5ch
+  + таймер TIM3, + PCNT
+  +1 I2C
+  +1 LPUART, +1 SPI ( для 48 и 64 pins )
+  + 3 OPA
+  + LCD Controller ( для HC32L136 )
+
+выпускается в 7 модификациях 
+  HC32L130E8PA  - tssop-28;      
+  HC32L130F8UA  - qfn-32(4x4);      
+  HC32L130J8UA  - qfn-48(7x7);      
+  HC32L13xJ8TA  - lqfp-48;      
+  HC32L136K8TA  - lqfp-64(7x7),lqfp-64(10x10);      
+```
