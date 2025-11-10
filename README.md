@@ -43,7 +43,7 @@
 Comm:    2xUART, LPUART, SPI, I2C
 Timers:  Base - 3, Adv - 3, LP - 1, PCA - 1(5ch), RTC, WDT
 Analog:  ADC 12bit, Comp - 2, LVD, BGR Vref, TempSensor
-Add:     Buzzer 3ch, CRC-16
+Add:     Buzzer 4ch, CRC-16
 
 выпускается в 7 модификациях
   HC32L110B4PA  - tssop-16;      16K Flash; 2K RAM
@@ -60,10 +60,14 @@ Add:     Buzzer 3ch, CRC-16
 - нет DMA
 - внутренний RCL(LSI) - 2 константы 32.768, 38.4 kHz   (min 19.7)
 - внутренний RCH(HSI) - 5 констант  4, 8, 16, 22.12, 24 MHz  (min 2.3)
-- 32МГц от внешнего кварца или генератора
-- HCLK  от  RCL, XTL(LSE), RCH, XTH(HSE)
+- XTL(LSE) = 0-1000 кГц от внешнего кварца или генератора
+- XTH(HSE) = 4-32 МГц от внешнего кварца или генератора
+- HCLK  от  RCL, RCH, XTL, XTH
+- WDT от отдельного 10 кГц внутреннего RC генератора
 - на всех корпусах есть возможность подключения и XTH и XTL
   причем независимо и одновременно (или в виде входа только - настраивается)
+- Buzzer - комплементарный выход таймеров TIM0,1,2 и LPTIM  (TOG,TOGN) 
+- Advanced Timers TIM4,5,6 имеют AOS Triggers и Port Triggers
 
 потребление
 - при LPrun ( while(1) perif - off ) при снижении частоты HCLK - потребление снижается
@@ -84,17 +88,19 @@ Add:     Buzzer 3ch, CRC-16
 Поддержка отладчиков OpenOCD, JLink
 
 ###  JLink
-
+```
 Описание контроллеров для JLink в папке JLinkDevices<br>
 скопировать содержимое папки в  <USER>\AppData\Roaming\SEGGER\JLinkDevices
+```
 
 ###  HC32L130, HC32L136(+LCDC)
 ```
 Cortex-M0+ 48MHz, 1.8-5.5V, 64K Flash, 8K RAM
 
-Добавлено (по сравнению с L110) :
-  DMA 2ch, PLL, FastIO, HDIV, CRC-32, Buzzer 5ch
-  + таймер TIM3, + PCNT
+Отличия  (по сравнению с L110) :
+  DMA 2ch, PLL, FastIO, HDIV, Buzzer 5ch
+  CRC-32, AES-128, TRNG
+  + таймер TIM3 (3ch), + PCNT
   +1 I2C
   +1 LPUART, +1 SPI ( для 48 и 64 pins )
   + 3 OPA
@@ -106,4 +112,24 @@ Cortex-M0+ 48MHz, 1.8-5.5V, 64K Flash, 8K RAM
   HC32L130J8UA  - qfn-48(7x7);      
   HC32L13xJ8TA  - lqfp-48;      
   HC32L136K8TA  - lqfp-64(7x7),lqfp-64(10x10);      
+```
+
+###  HC32L072, HC32L073
+```
+Cortex-M0+ 48MHz, 1.8-5.5V, 128K Flash, 16K RAM
+Отличия  (по сравнению с L130) :
+  1-5x OPA, 2x DAC, 3x COMP
+  CAN, 
+  USBFS Dev  (L072)
+  2x LPTIM 
+  LCD Controller - (L073) 
+  1-2x I2S, 1-2x SPI, 1-2x I2S, 2-4x UART, 1-2x LPUART
+  RCH48 для  Crystal-less USB
+
+
+выпускаются в 7 модификациях 
+  HC32L072FAUA  - qfn-32(5x5);      
+  HC32L07xJATA  - lqfp-48(7x7);      
+  HC32L07xKATA  - lqfp-64(10x10);      
+  HC32L07xPATA  - lqfp-100(14x14);      
 ```
