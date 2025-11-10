@@ -47,6 +47,9 @@
 /*  Date        2019-03-13                                                   */
 /*  Target-mcu  HC32L110                                                     */
 /*****************************************************************************/
+/*  Version     V2.0                                                         */
+/*  Date        2025-11-09                                                   */
+/*****************************************************************************/
 
 /*
 ;//-------- <<< Use Configuration Wizard in Context Menu >>> ------------------
@@ -68,56 +71,57 @@
                 .globl      __Vectors_End
                 .globl      __Vectors_Size
 __Vectors:
-                .long       __StackTop                         /*     Top of Stack */
-                .long       Reset_Handler                      /*     Reset Handler */
-                .long       NMI_Handler                        /* -14 NMI Handler */
-                .long       HardFault_Handler                  /* -13 Hard Fault Handler */
-                .long       0                                  /*     Reserved */
-                .long       0                                  /*     Reserved */
-                .long       0                                  /*     Reserved */
-                .long       0                                  /*     Reserved */
-                .long       0                                  /*     Reserved */
-                .long       0                                  /*     Reserved */
-                .long       0                                  /*     Reserved */
-                .long       SVC_Handler                        /*  -5 SVCall Handler */
-                .long       0                                  /*     Reserved */
-                .long       0                                  /*     Reserved */
-                .long       PendSV_Handler                     /*  -2 PendSV Handler */
-                .long       SysTick_Handler                    /*  -1 SysTick Handler */
+                .word       __StackTop                         /*     Top of Stack */
+                .word       Reset_Handler                      /*     Reset Handler */
+                .word       NMI_Handler                        /* -14 NMI Handler */
+                .word       HardFault_Handler                  /* -13 Hard Fault Handler */
+                .word       0                                  /*     Reserved */
+                .word       0                                  /*     Reserved */
+                .word       0                                  /*     Reserved */
+                .word       0                                  /*     Reserved */
+                .word       0                                  /*     Reserved */
+                .word       0                                  /*     Reserved */
+                .word       0                                  /*     Reserved */
+                .word       SVC_Handler                        /*  -5 SVCall Handler */
+                .word       0                                  /*     Reserved */
+                .word       0                                  /*     Reserved */
+                .word       PendSV_Handler                     /*  -2 PendSV Handler */
+                .word       SysTick_Handler                    /*  -1 SysTick Handler */
 
                 /* Interrupts */
-                .long       IRQ000_Handler
-                .long       IRQ001_Handler
-                .long       IRQ002_Handler
-                .long       IRQ003_Handler
-                .long       IRQ004_Handler
-                .long       IRQ005_Handler
-                .long       IRQ006_Handler
-                .long       IRQ007_Handler
-                .long       IRQ008_Handler
-                .long       IRQ009_Handler
-                .long       IRQ010_Handler
-                .long       IRQ011_Handler
-                .long       IRQ012_Handler
-                .long       IRQ013_Handler
-                .long       IRQ014_Handler
-                .long       IRQ015_Handler
-                .long       IRQ016_Handler
-                .long       IRQ017_Handler
-                .long       IRQ018_Handler
-                .long       IRQ019_Handler
-                .long       IRQ020_Handler
-                .long       IRQ021_Handler
-                .long       IRQ022_Handler
-                .long       IRQ023_Handler
-                .long       IRQ024_Handler
-                .long       IRQ025_Handler
-                .long       IRQ026_Handler
-                .long       IRQ027_Handler
-                .long       IRQ028_Handler
-                .long       IRQ029_Handler
-                .long       IRQ030_Handler
-                .long       IRQ031_Handler
+                .word PORT0_IRQHandler
+                .word PORT1_IRQHandler
+                .word PORT2_IRQHandler
+                .word PORT3_IRQHandler
+                .word 0
+                .word 0
+                .word UART0_IRQHandler
+                .word UART1_IRQHandler
+                .word LPUART_IRQHandler
+                .word 0
+                .word SPI_IRQHandler
+                .word 0
+                .word I2C_IRQHandler
+                .word 0
+                .word TIM0_IRQHandler
+                .word TIM1_IRQHandler
+                .word TIM2_IRQHandler
+                .word LPTIM_IRQHandler
+                .word TIM4_IRQHandler
+                .word TIM5_IRQHandler
+                .word TIM6_IRQHandler
+                .word PCA_IRQHandler
+                .word WDT_IRQHandler
+                .word RTC_IRQHandler
+                .word ADC_IRQHandler
+                .word 0
+                .word VC0_IRQHandler
+                .word VC1_IRQHandler
+                .word LVD_IRQHandler
+                .word 0
+                .word EF_RAM_IRQHandler
+                .word CLKTRIM_IRQHandler
+
 __Vectors_End:
                 .equ        __Vectors_Size, __Vectors_End - __Vectors
                 .size       __Vectors, . - __Vectors
@@ -135,7 +139,8 @@ __Vectors_End:
                 .globl      Reset_Handler
 Reset_Handler:
                 /* Set stack top pointer. */
-                /*ldr         sp, =__StackTop*/
+                ldr         r0, =__StackTop
+                mov         sp ,r0
 /* Single section scheme.
  *
  * The ranges of copy from/to are specified by following symbols
@@ -206,6 +211,8 @@ Rom_Code:
                 str         r2, [r0]
                 /* Call the clock system initialization function. */
                 bl          SystemInit
+                /* Call static constructors */
+                //bl          __libc_init_array
                 /* Call the application's entry point. */
                 bl          main
                 bx          lr
@@ -232,7 +239,7 @@ Default_Handler:
  */
                 .macro      Set_Default_Handler  Handler_Name
                 .weak       \Handler_Name
-                .set        \Handler_Name, Default_Handler
+                .thumb_set  \Handler_Name, Default_Handler
                 .endm
 
 /* Default exception/interrupt handler */
@@ -243,37 +250,30 @@ Default_Handler:
                 Set_Default_Handler    PendSV_Handler
                 Set_Default_Handler    SysTick_Handler
 
-		Set_Default_Handler    IRQ000_Handler
-                Set_Default_Handler    IRQ001_Handler
-                Set_Default_Handler    IRQ002_Handler
-                Set_Default_Handler    IRQ003_Handler
-                Set_Default_Handler    IRQ004_Handler
-                Set_Default_Handler    IRQ005_Handler
-                Set_Default_Handler    IRQ006_Handler
-                Set_Default_Handler    IRQ007_Handler
-                Set_Default_Handler    IRQ008_Handler
-                Set_Default_Handler    IRQ009_Handler
-                Set_Default_Handler    IRQ010_Handler
-                Set_Default_Handler    IRQ011_Handler
-                Set_Default_Handler    IRQ012_Handler
-                Set_Default_Handler    IRQ013_Handler
-                Set_Default_Handler    IRQ014_Handler
-                Set_Default_Handler    IRQ015_Handler
-                Set_Default_Handler    IRQ016_Handler
-                Set_Default_Handler    IRQ017_Handler
-                Set_Default_Handler    IRQ018_Handler
-                Set_Default_Handler    IRQ019_Handler
-                Set_Default_Handler    IRQ020_Handler
-                Set_Default_Handler    IRQ021_Handler
-                Set_Default_Handler    IRQ022_Handler
-                Set_Default_Handler    IRQ023_Handler
-                Set_Default_Handler    IRQ024_Handler
-                Set_Default_Handler    IRQ025_Handler
-                Set_Default_Handler    IRQ026_Handler
-                Set_Default_Handler    IRQ027_Handler
-                Set_Default_Handler    IRQ028_Handler
-                Set_Default_Handler    IRQ029_Handler
-                Set_Default_Handler    IRQ030_Handler
-                Set_Default_Handler    IRQ031_Handler
+        		Set_Default_Handler    PORT0_IRQHandler
+        		Set_Default_Handler    PORT1_IRQHandler
+                Set_Default_Handler    PORT2_IRQHandler
+                Set_Default_Handler    PORT3_IRQHandler
+                Set_Default_Handler    UART0_IRQHandler
+                Set_Default_Handler    UART1_IRQHandler
+                Set_Default_Handler    LPUART_IRQHandler
+                Set_Default_Handler    SPI_IRQHandler
+                Set_Default_Handler    I2C_IRQHandler
+                Set_Default_Handler    TIM0_IRQHandler
+                Set_Default_Handler    TIM1_IRQHandler
+                Set_Default_Handler    TIM2_IRQHandler
+                Set_Default_Handler    LPTIM_IRQHandler
+                Set_Default_Handler    TIM4_IRQHandler
+                Set_Default_Handler    TIM5_IRQHandler
+                Set_Default_Handler    TIM6_IRQHandler
+                Set_Default_Handler    PCA_IRQHandler
+                Set_Default_Handler    WDT_IRQHandler
+                Set_Default_Handler    RTC_IRQHandler
+                Set_Default_Handler    ADC_IRQHandler
+                Set_Default_Handler    VC0_IRQHandler
+                Set_Default_Handler    VC1_IRQHandler
+                Set_Default_Handler    LVD_IRQHandler
+                Set_Default_Handler    EF_RAM_IRQHandler
+                Set_Default_Handler    CLKTRIM_IRQHandler
 
                 .end

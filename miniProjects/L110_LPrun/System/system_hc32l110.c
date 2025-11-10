@@ -64,26 +64,13 @@ static void _HidePinInit(void)
  ******************************************************************************/
 void SystemInit(void)
 {
-    //stc_clk_systickcfg_t stcCfg;
-
-    // TODO load trim from flash and enable RCH
-    //hcr 4MHz manual trim.
-    //Clk_SetRCHFreq(ClkFreq4Mhz);
-    //Clk_Enable(ClkRCH, TRUE);
-
-	// set RCH = 4MHz
+    // set RCH = 4MHz
     M0P_CLOCK->RCH_CR_f.TRIM = (*((volatile uint16_t*) (0x00100C08ul)));
-    //M0P_CLOCK->RCH_CR_f.TRIM = 1;
     while (!M0P_CLOCK->RCH_CR_f.STABLE);
 
     SystemCoreClockUpdate();
 	  
-	_HidePinInit();
-
-    //DDL_ZERO_STRUCT(stcCfg);
-    //stcCfg.bNoRef = TRUE;
-    //stcCfg.u32LoadVal = 0xFFFFFF;
-    //Clk_SysTickConfig(&stcCfg);
+    _HidePinInit();
 }
 
 

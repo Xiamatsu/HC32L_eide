@@ -330,7 +330,7 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
                 0x00000000                __Vectors
                 0x000000c0                __Vectors_End
 
-.text           0x000000c0      0x1e0
+.text           0x000000c0      0x1e8
  *(.text)
  *(.text*)
  .text.deregister_tm_clones
@@ -345,117 +345,110 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
                 0x00000158       0x34 ./Project/.obj/__/__/__/Drivers/Device/Source/system_hc32l110.o
                 0x00000158                SystemInit
  .text.Reset_Handler
-                0x0000018c       0x60 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
+                0x0000018c       0x68 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
                 0x0000018c                Reset_Handler
  .text.Default_Handler
-                0x000001ec        0x4 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
-                0x000001ec                IRQ031_Handler
-                0x000001ec                HardFault_Handler
-                0x000001ec                SysTick_Handler
-                0x000001ec                IRQ012_Handler
-                0x000001ec                IRQ019_Handler
-                0x000001ec                PendSV_Handler
-                0x000001ec                NMI_Handler
-                0x000001ec                IRQ011_Handler
-                0x000001ec                IRQ014_Handler
-                0x000001ec                IRQ027_Handler
-                0x000001ec                IRQ028_Handler
-                0x000001ec                IRQ023_Handler
-                0x000001ec                IRQ009_Handler
-                0x000001ec                IRQ021_Handler
-                0x000001ec                IRQ008_Handler
-                0x000001ec                IRQ022_Handler
-                0x000001ec                IRQ007_Handler
-                0x000001ec                IRQ004_Handler
-                0x000001ec                IRQ002_Handler
-                0x000001ec                IRQ000_Handler
-                0x000001ec                IRQ005_Handler
-                0x000001ec                IRQ006_Handler
-                0x000001ec                IRQ015_Handler
-                0x000001ec                SVC_Handler
-                0x000001ec                IRQ001_Handler
-                0x000001ec                IRQ010_Handler
-                0x000001ec                IRQ003_Handler
-                0x000001ec                IRQ024_Handler
-                0x000001ec                IRQ016_Handler
-                0x000001ec                IRQ020_Handler
-                0x000001ec                IRQ018_Handler
-                0x000001ec                IRQ026_Handler
-                0x000001ec                IRQ025_Handler
-                0x000001ec                IRQ013_Handler
-                0x000001ec                IRQ030_Handler
-                0x000001ec                IRQ029_Handler
-                0x000001ec                IRQ017_Handler
- .text.delay    0x000001f0       0x12 ./Project/.obj/__/Src/main.o
-                0x000001f0                delay
- *fill*         0x00000202        0x2 
+                0x000001f4        0x4 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
+                0x000001f4                LVD_IRQHandler
+                0x000001f4                HardFault_Handler
+                0x000001f4                TIM6_IRQHandler
+                0x000001f4                SysTick_Handler
+                0x000001f4                PendSV_Handler
+                0x000001f4                NMI_Handler
+                0x000001f4                UART1_IRQHandler
+                0x000001f4                EF_RAM_IRQHandler
+                0x000001f4                UART0_IRQHandler
+                0x000001f4                PORT1_IRQHandler
+                0x000001f4                LPTIM_IRQHandler
+                0x000001f4                CLKTRIM_IRQHandler
+                0x000001f4                PORT2_IRQHandler
+                0x000001f4                RTC_IRQHandler
+                0x000001f4                SPI_IRQHandler
+                0x000001f4                LPUART_IRQHandler
+                0x000001f4                TIM4_IRQHandler
+                0x000001f4                VC0_IRQHandler
+                0x000001f4                PCA_IRQHandler
+                0x000001f4                TIM1_IRQHandler
+                0x000001f4                VC1_IRQHandler
+                0x000001f4                ADC_IRQHandler
+                0x000001f4                TIM5_IRQHandler
+                0x000001f4                PORT3_IRQHandler
+                0x000001f4                TIM0_IRQHandler
+                0x000001f4                I2C_IRQHandler
+                0x000001f4                WDT_IRQHandler
+                0x000001f4                SVC_Handler
+                0x000001f4                TIM2_IRQHandler
+                0x000001f4                PORT0_IRQHandler
+ .text.delay    0x000001f8       0x12 ./Project/.obj/__/Src/main.o
+                0x000001f8                delay
+ *fill*         0x0000020a        0x2 
  .text.startup.main
-                0x00000204       0x84 ./Project/.obj/__/Src/main.o
-                0x00000204                main
+                0x0000020c       0x84 ./Project/.obj/__/Src/main.o
+                0x0000020c                main
  *(.glue_7)
- .glue_7        0x00000288        0x0 linker stubs
+ .glue_7        0x00000290        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000288        0x0 linker stubs
+ .glue_7t       0x00000290        0x0 linker stubs
  *(.eh_fream)
  *(.init)
- .init          0x00000288        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crti.o
-                0x00000288                _init
- .init          0x0000028c        0x8 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtn.o
+ .init          0x00000290        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crti.o
+                0x00000290                _init
+ .init          0x00000294        0x8 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtn.o
  *(.fini)
- .fini          0x00000294        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crti.o
-                0x00000294                _fini
- .fini          0x00000298        0x8 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtn.o
+ .fini          0x0000029c        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crti.o
+                0x0000029c                _fini
+ .fini          0x000002a0        0x8 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtn.o
 
-.vfp11_veneer   0x000002a0        0x0
- .vfp11_veneer  0x000002a0        0x0 linker stubs
+.vfp11_veneer   0x000002a8        0x0
+ .vfp11_veneer  0x000002a8        0x0 linker stubs
 
-.v4_bx          0x000002a0        0x0
- .v4_bx         0x000002a0        0x0 linker stubs
+.v4_bx          0x000002a8        0x0
+ .v4_bx         0x000002a8        0x0 linker stubs
 
-.iplt           0x000002a0        0x0
- .iplt          0x000002a0        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x000002a8        0x0
+ .iplt          0x000002a8        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x000002a0        0x0
-                0x000002a0                        . = ALIGN (0x4)
+.rodata         0x000002a8        0x0
+                0x000002a8                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x000002a0                        . = ALIGN (0x4)
+                0x000002a8                        . = ALIGN (0x4)
 
-.eh_frame       0x000002a0        0x0
- .eh_frame      0x000002a0        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
+.eh_frame       0x000002a8        0x0
+ .eh_frame      0x000002a8        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rel.dyn        0x000002a0        0x0
- .rel.iplt      0x000002a0        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x000002a8        0x0
+ .rel.iplt      0x000002a8        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000002a0                        __exidx_start = .
+                0x000002a8                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000002a0                        __exidx_end = .
+                0x000002a8                        __exidx_end = .
 
-.preinit_array  0x000002a0        0x0
-                0x000002a0                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x000002a8        0x0
+                0x000002a8                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x000002a0                        PROVIDE (__preinit_array_end = .)
+                0x000002a8                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000002a0        0x4
-                0x000002a0                        PROVIDE (__init_array_start = .)
+.init_array     0x000002a8        0x4
+                0x000002a8                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x000002a0        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x000002a4                        PROVIDE (__init_array_end = .)
+ .init_array    0x000002a8        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x000002ac                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x000002a4        0x4
+.fini_array     0x000002ac        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x000002a4        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
+ .fini_array    0x000002ac        0x4 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x000002a8                        __etext = LOADADDR (.data)
+                0x000002b0                        __etext = LOADADDR (.data)
 
-.data           0x20000000        0x4 load address 0x000002a8
+.data           0x20000000        0x4 load address 0x000002b0
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        __data_start__ = .
  *(vtable)
@@ -468,16 +461,16 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
                 0x20000004                        __data_end__ = .
 
 .tm_clone_table
-                0x20000004        0x0 load address 0x000002ac
+                0x20000004        0x0 load address 0x000002b4
  .tm_clone_table
                 0x20000004        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x20000004        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20000004        0x0 load address 0x000002ac
+.igot.plt       0x20000004        0x0 load address 0x000002b4
  .igot.plt      0x20000004        0x0 C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.bss            0x20000004       0x1c load address 0x000002ac
+.bss            0x20000004       0x1c load address 0x000002b4
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        __bss_start__ = .
  *(.bss*)
@@ -490,7 +483,7 @@ LOAD C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb
                 0x20000020                        __bss_end__ = .
 
 ._user_heap_stack
-                0x20000020      0x200 load address 0x000002ac
+                0x20000020      0x200 load address 0x000002b4
                 0x20000020                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
@@ -554,10 +547,10 @@ LOAD linker stubs
  .debug_rnglists
                 0x0000003e       0x1a ./Project/.obj/__/Src/main.o
 
-.debug_line     0x00000000      0x418
- .debug_line    0x00000000      0x1b3 ./Project/.obj/__/__/__/Drivers/Device/Source/system_hc32l110.o
- .debug_line    0x000001b3       0x88 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
- .debug_line    0x0000023b      0x1dd ./Project/.obj/__/Src/main.o
+.debug_line     0x00000000      0x41e
+ .debug_line    0x00000000      0x1b1 ./Project/.obj/__/__/__/Drivers/Device/Source/system_hc32l110.o
+ .debug_line    0x000001b1       0x90 ./Project/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o
+ .debug_line    0x00000241      0x1dd ./Project/.obj/__/Src/main.o
 
 .debug_str      0x00000000     0x12d1
  .debug_str     0x00000000     0x12d1 ./Project/.obj/__/__/__/Drivers/Device/Source/system_hc32l110.o
