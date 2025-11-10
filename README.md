@@ -125,7 +125,7 @@ Cortex-M0+ 48MHz, 1.8-5.5V, 128K Flash, 16K RAM
   LCD Controller - (L073) 
   1-2x I2S, 1-2x SPI, 1-2x I2S, 2-4x UART, 1-2x LPUART
   RCH48 для  Crystal-less USB
-
+  AES-192,256
 
 выпускаются в 7 модификациях 
   HC32L072FAUA  - qfn-32(5x5);      
