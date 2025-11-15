@@ -1,0 +1,12 @@
+>>> cc
+
+
+
+
+
+>>> ld
+
+C:/Users/User/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: ./Debug/Blink34.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+           FLASH:         712 B        32 KB      2.17%
+             RAM:         544 B         4 KB     13.28%
