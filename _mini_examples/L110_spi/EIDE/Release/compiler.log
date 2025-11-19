@@ -1,0 +1,14 @@
+>>> cc
+
+./../Src/main.c: In function 'main':
+./../Src/main.c:64:14: warning: variable 'rs' set but not used [-Wunused-but-set-variable]
+   64 |     uint8_t  rs;
+      |              ^~
+
+
+
+>>> ld
+
+Memory region         Used Size  Region Size  %age Used
+           FLASH:         880 B        32 KB      2.69%
+             RAM:         544 B         4 KB     13.28%

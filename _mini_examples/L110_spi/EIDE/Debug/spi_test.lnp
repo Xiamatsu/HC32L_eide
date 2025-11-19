@@ -1,0 +1,5 @@
+-L../../../Drivers/Device/Source -mcpu=cortex-m0plus -mthumb -T c:/MCU/HC32L_eide/Drivers/Device/LDScript/hc32l110.ld -Wl,--gc-sections -Wl,--print-memory-usage --specs=nano.specs
+-Wl,-Map=./Debug/spi_test.map
+-o ./Debug/spi_test.elf ./Debug/.obj/__/Src/main.o
+./Debug/.obj/__/System/startup_hc32l110.o
+./Debug/.obj/__/System/system_hc32l110.o -lm

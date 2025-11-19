@@ -1,0 +1,15 @@
+>>> cc
+
+./../Src/main.c: In function 'main':
+./../Src/main.c:64:14: warning: variable 'rs' set but not used [-Wunused-but-set-variable]
+   64 |     uint8_t  rs;
+      |              ^~
+
+
+
+>>> ld
+
+C:/xpack/xpack-arm-none-eabi-gcc-14.2.1-1.1/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: ./Debug/spi_test.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+           FLASH:         968 B        32 KB      2.95%
+             RAM:         544 B         4 KB     13.28%

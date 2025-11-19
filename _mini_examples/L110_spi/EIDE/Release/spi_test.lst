@@ -1,0 +1,531 @@
+
+c:\MCU\HC32L_eide\_mini_examples\L110_spi\EIDE\Release\spi_test.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+000000c0 <__do_global_dtors_aux>:
+  c0:	b510      	push	{r4, lr}
+  c2:	4c06      	ldr	r4, [pc, #24]	@ (dc <__do_global_dtors_aux+0x1c>)
+  c4:	7823      	ldrb	r3, [r4, #0]
+  c6:	2b00      	cmp	r3, #0
+  c8:	d107      	bne.n	da <__do_global_dtors_aux+0x1a>
+  ca:	4b05      	ldr	r3, [pc, #20]	@ (e0 <__do_global_dtors_aux+0x20>)
+  cc:	2b00      	cmp	r3, #0
+  ce:	d002      	beq.n	d6 <__do_global_dtors_aux+0x16>
+  d0:	4804      	ldr	r0, [pc, #16]	@ (e4 <__do_global_dtors_aux+0x24>)
+  d2:	e000      	b.n	d6 <__do_global_dtors_aux+0x16>
+  d4:	bf00      	nop
+  d6:	2301      	movs	r3, #1
+  d8:	7023      	strb	r3, [r4, #0]
+  da:	bd10      	pop	{r4, pc}
+  dc:	20000004 	.word	0x20000004
+  e0:	00000000 	.word	0x00000000
+  e4:	00000364 	.word	0x00000364
+
+000000e8 <frame_dummy>:
+  e8:	4b04      	ldr	r3, [pc, #16]	@ (fc <frame_dummy+0x14>)
+  ea:	b510      	push	{r4, lr}
+  ec:	2b00      	cmp	r3, #0
+  ee:	d003      	beq.n	f8 <frame_dummy+0x10>
+  f0:	4903      	ldr	r1, [pc, #12]	@ (100 <_Min_Heap_Size>)
+  f2:	4804      	ldr	r0, [pc, #16]	@ (104 <_Min_Heap_Size+0x4>)
+  f4:	e000      	b.n	f8 <frame_dummy+0x10>
+  f6:	bf00      	nop
+  f8:	bd10      	pop	{r4, pc}
+  fa:	46c0      	nop			@ (mov r8, r8)
+  fc:	00000000 	.word	0x00000000
+ 100:	20000008 	.word	0x20000008
+ 104:	00000364 	.word	0x00000364
+
+00000108 <SPI_Init>:
+    //  SCK  - P25  (sel=1)
+    //  MOSI - P26  (sel=1)
+    //  MISO - not used
+    //  CS   - P24  (sel=1) (soft)
+
+    M0P_CLOCK->PERI_CLKEN_f.GPIO = 1;    //  enable CLK to GPIO   
+ 108:	2380      	movs	r3, #128	@ 0x80
+void SPI_Init() {
+ 10a:	b5f7      	push	{r0, r1, r2, r4, r5, r6, r7, lr}
+    M0P_CLOCK->PERI_CLKEN_f.GPIO = 1;    //  enable CLK to GPIO   
+ 10c:	4949      	ldr	r1, [pc, #292]	@ (234 <SPI_Init+0x12c>)
+    // P24 - CS  as GPIO
+    M0P_GPIO->P2ADS_f.P24 = 0;           //  not analog
+ 10e:	26c6      	movs	r6, #198	@ 0xc6
+    M0P_CLOCK->PERI_CLKEN_f.GPIO = 1;    //  enable CLK to GPIO   
+ 110:	6a0a      	ldr	r2, [r1, #32]
+ 112:	055b      	lsls	r3, r3, #21
+ 114:	4313      	orrs	r3, r2
+ 116:	620b      	str	r3, [r1, #32]
+    M0P_GPIO->P2ADS_f.P24 = 0;           //  not analog
+ 118:	2310      	movs	r3, #16
+ 11a:	4947      	ldr	r1, [pc, #284]	@ (238 <SPI_Init+0x130>)
+ 11c:	0076      	lsls	r6, r6, #1
+ 11e:	598a      	ldr	r2, [r1, r6]
+    M0P_GPIO->P24_SEL = 0;               //  not alternate  
+    M0P_GPIO->P2DIR_f.P24 = 0;           //  output
+ 120:	25c0      	movs	r5, #192	@ 0xc0
+    M0P_GPIO->P2ADS_f.P24 = 0;           //  not analog
+ 122:	439a      	bics	r2, r3
+ 124:	518a      	str	r2, [r1, r6]
+    M0P_GPIO->P24_SEL = 0;               //  not alternate  
+ 126:	2200      	movs	r2, #0
+    M0P_GPIO->P2OD_f.P24 = 0;            //  PushPull ( not open drain )
+ 128:	24d6      	movs	r4, #214	@ 0xd6
+    M0P_GPIO->P24_SEL = 0;               //  not alternate  
+ 12a:	4844      	ldr	r0, [pc, #272]	@ (23c <SPI_Init+0x134>)
+    M0P_GPIO->P2DIR_f.P24 = 0;           //  output
+ 12c:	006d      	lsls	r5, r5, #1
+    M0P_GPIO->P24_SEL = 0;               //  not alternate  
+ 12e:	6002      	str	r2, [r0, #0]
+    M0P_GPIO->P2PD_f.P24 = 0;            //  no Pull Down 
+ 130:	20d2      	movs	r0, #210	@ 0xd2
+    M0P_GPIO->P2DIR_f.P24 = 0;           //  output
+ 132:	594a      	ldr	r2, [r1, r5]
+    M0P_GPIO->P2OD_f.P24 = 0;            //  PushPull ( not open drain )
+ 134:	0064      	lsls	r4, r4, #1
+    M0P_GPIO->P2DIR_f.P24 = 0;           //  output
+ 136:	439a      	bics	r2, r3
+ 138:	514a      	str	r2, [r1, r5]
+    M0P_GPIO->P2OD_f.P24 = 0;            //  PushPull ( not open drain )
+ 13a:	590a      	ldr	r2, [r1, r4]
+    M0P_GPIO->P2PD_f.P24 = 0;            //  no Pull Down 
+ 13c:	0040      	lsls	r0, r0, #1
+    M0P_GPIO->P2OD_f.P24 = 0;            //  PushPull ( not open drain )
+ 13e:	439a      	bics	r2, r3
+ 140:	510a      	str	r2, [r1, r4]
+    M0P_GPIO->P2PD_f.P24 = 0;            //  no Pull Down 
+ 142:	580a      	ldr	r2, [r1, r0]
+ 144:	000f      	movs	r7, r1
+ 146:	439a      	bics	r2, r3
+ 148:	500a      	str	r2, [r1, r0]
+    M0P_GPIO->P2PU_f.P24 = 0;            //  Pull Up 
+ 14a:	21d0      	movs	r1, #208	@ 0xd0
+ 14c:	0049      	lsls	r1, r1, #1
+ 14e:	587a      	ldr	r2, [r7, r1]
+ 150:	9101      	str	r1, [sp, #4]
+ 152:	439a      	bics	r2, r3
+ 154:	507a      	str	r2, [r7, r1]
+    M0P_GPIO->P2DR_f.P24 = 0;            //  High drive
+ 156:	22ce      	movs	r2, #206	@ 0xce
+ 158:	0052      	lsls	r2, r2, #1
+ 15a:	0011      	movs	r1, r2
+ 15c:	58ba      	ldr	r2, [r7, r2]
+ 15e:	439a      	bics	r2, r3
+ 160:	507a      	str	r2, [r7, r1]
+    // P25 - SCK
+    M0P_GPIO->P2ADS_f.P25 = 0;           //  not analog
+ 162:	59ba      	ldr	r2, [r7, r6]
+ 164:	4694      	mov	ip, r2
+ 166:	2220      	movs	r2, #32
+ 168:	4661      	mov	r1, ip
+ 16a:	4391      	bics	r1, r2
+ 16c:	51b9      	str	r1, [r7, r6]
+    M0P_GPIO->P25_SEL = 1;               //  SPI_SCK  
+ 16e:	2101      	movs	r1, #1
+ 170:	4f33      	ldr	r7, [pc, #204]	@ (240 <SPI_Init+0x138>)
+ 172:	6039      	str	r1, [r7, #0]
+    M0P_GPIO->P2DIR_f.P25 = 0;           //  output
+ 174:	4f30      	ldr	r7, [pc, #192]	@ (238 <SPI_Init+0x130>)
+ 176:	0039      	movs	r1, r7
+ 178:	597f      	ldr	r7, [r7, r5]
+ 17a:	4397      	bics	r7, r2
+ 17c:	46bc      	mov	ip, r7
+ 17e:	000f      	movs	r7, r1
+ 180:	4661      	mov	r1, ip
+ 182:	5179      	str	r1, [r7, r5]
+    M0P_GPIO->P2OD_f.P25 = 0;            //  PushPull ( not open drain )
+ 184:	0039      	movs	r1, r7
+ 186:	593f      	ldr	r7, [r7, r4]
+ 188:	4397      	bics	r7, r2
+ 18a:	46bc      	mov	ip, r7
+ 18c:	000f      	movs	r7, r1
+ 18e:	4661      	mov	r1, ip
+ 190:	5139      	str	r1, [r7, r4]
+    M0P_GPIO->P2PD_f.P25 = 0;            //  no Pull Down 
+ 192:	0039      	movs	r1, r7
+ 194:	583f      	ldr	r7, [r7, r0]
+ 196:	4397      	bics	r7, r2
+ 198:	46bc      	mov	ip, r7
+ 19a:	000f      	movs	r7, r1
+ 19c:	4661      	mov	r1, ip
+ 19e:	5039      	str	r1, [r7, r0]
+    M0P_GPIO->P2PU_f.P25 = 0;            //  no Pull Up 
+ 1a0:	9b01      	ldr	r3, [sp, #4]
+ 1a2:	0039      	movs	r1, r7
+ 1a4:	58ff      	ldr	r7, [r7, r3]
+ 1a6:	4397      	bics	r7, r2
+ 1a8:	46bc      	mov	ip, r7
+ 1aa:	000f      	movs	r7, r1
+ 1ac:	4661      	mov	r1, ip
+ 1ae:	50f9      	str	r1, [r7, r3]
+    M0P_GPIO->P2DR_f.P25 = 0;            //  High drive 
+ 1b0:	21ce      	movs	r1, #206	@ 0xce
+ 1b2:	0049      	lsls	r1, r1, #1
+ 1b4:	587f      	ldr	r7, [r7, r1]
+ 1b6:	4397      	bics	r7, r2
+ 1b8:	003a      	movs	r2, r7
+ 1ba:	4f1f      	ldr	r7, [pc, #124]	@ (238 <SPI_Init+0x130>)
+ 1bc:	507a      	str	r2, [r7, r1]
+    // P26 - MOSI
+    M0P_GPIO->P2ADS_f.P26 = 0;           //  not analog
+ 1be:	59ba      	ldr	r2, [r7, r6]
+ 1c0:	4694      	mov	ip, r2
+ 1c2:	2240      	movs	r2, #64	@ 0x40
+ 1c4:	4661      	mov	r1, ip
+ 1c6:	4391      	bics	r1, r2
+ 1c8:	51b9      	str	r1, [r7, r6]
+    M0P_GPIO->P26_SEL = 1;               //  SPI_MOSI  
+ 1ca:	4f1e      	ldr	r7, [pc, #120]	@ (244 <SPI_Init+0x13c>)
+ 1cc:	3e8c      	subs	r6, #140	@ 0x8c
+ 1ce:	3eff      	subs	r6, #255	@ 0xff
+ 1d0:	603e      	str	r6, [r7, #0]
+    M0P_GPIO->P2DIR_f.P26 = 0;           //  output
+ 1d2:	4f19      	ldr	r7, [pc, #100]	@ (238 <SPI_Init+0x130>)
+ 1d4:	597e      	ldr	r6, [r7, r5]
+ 1d6:	4396      	bics	r6, r2
+ 1d8:	517e      	str	r6, [r7, r5]
+    M0P_GPIO->P2OD_f.P26 = 0;            //  PushPull ( not open drain )
+ 1da:	593d      	ldr	r5, [r7, r4]
+    M0P_CLOCK->PERI_CLKEN_f.SPI = 1;    //  enable CLK to SPI
+    M0P_SPI->CR_f.MSTR = 1;             //  master
+    M0P_SPI->CR_f.CPHA = 0;
+    M0P_SPI->CR_f.CPOL = 0;
+    //  divider = 2
+    M0P_SPI->CR_f.SPR0 = 0;
+ 1dc:	2601      	movs	r6, #1
+    M0P_GPIO->P2OD_f.P26 = 0;            //  PushPull ( not open drain )
+ 1de:	4395      	bics	r5, r2
+ 1e0:	513d      	str	r5, [r7, r4]
+    M0P_GPIO->P2PD_f.P26 = 1;            //  no Pull Down 
+ 1e2:	583c      	ldr	r4, [r7, r0]
+ 1e4:	4314      	orrs	r4, r2
+ 1e6:	503c      	str	r4, [r7, r0]
+    M0P_GPIO->P2DR_f.P26 = 0;            //  High drive 
+ 1e8:	24ce      	movs	r4, #206	@ 0xce
+    M0P_GPIO->P2PU_f.P26 = 0;            //  no Pull Up 
+ 1ea:	58f8      	ldr	r0, [r7, r3]
+    M0P_GPIO->P2DR_f.P26 = 0;            //  High drive 
+ 1ec:	0064      	lsls	r4, r4, #1
+    M0P_GPIO->P2PU_f.P26 = 0;            //  no Pull Up 
+ 1ee:	4390      	bics	r0, r2
+ 1f0:	50f8      	str	r0, [r7, r3]
+    M0P_GPIO->P2DR_f.P26 = 0;            //  High drive 
+ 1f2:	5939      	ldr	r1, [r7, r4]
+    M0P_CLOCK->PERI_CLKEN_f.SPI = 1;    //  enable CLK to SPI
+ 1f4:	4b0f      	ldr	r3, [pc, #60]	@ (234 <SPI_Init+0x12c>)
+    M0P_GPIO->P2DR_f.P26 = 0;            //  High drive 
+ 1f6:	4391      	bics	r1, r2
+ 1f8:	5139      	str	r1, [r7, r4]
+    M0P_CLOCK->PERI_CLKEN_f.SPI = 1;    //  enable CLK to SPI
+ 1fa:	6a19      	ldr	r1, [r3, #32]
+ 1fc:	430a      	orrs	r2, r1
+ 1fe:	621a      	str	r2, [r3, #32]
+    M0P_SPI->CR_f.MSTR = 1;             //  master
+ 200:	2310      	movs	r3, #16
+ 202:	4a11      	ldr	r2, [pc, #68]	@ (248 <SPI_Init+0x140>)
+ 204:	6811      	ldr	r1, [r2, #0]
+ 206:	430b      	orrs	r3, r1
+    M0P_SPI->CR_f.CPHA = 0;
+ 208:	2104      	movs	r1, #4
+    M0P_SPI->CR_f.MSTR = 1;             //  master
+ 20a:	6013      	str	r3, [r2, #0]
+    M0P_SPI->CR_f.CPHA = 0;
+ 20c:	6813      	ldr	r3, [r2, #0]
+ 20e:	438b      	bics	r3, r1
+ 210:	6013      	str	r3, [r2, #0]
+    M0P_SPI->CR_f.CPOL = 0;
+ 212:	6813      	ldr	r3, [r2, #0]
+ 214:	1849      	adds	r1, r1, r1
+ 216:	438b      	bics	r3, r1
+ 218:	6013      	str	r3, [r2, #0]
+    M0P_SPI->CR_f.SPR0 = 0;
+ 21a:	6813      	ldr	r3, [r2, #0]
+    M0P_SPI->CR_f.SPR1 = 0;
+ 21c:	3906      	subs	r1, #6
+    M0P_SPI->CR_f.SPR0 = 0;
+ 21e:	43b3      	bics	r3, r6
+ 220:	6013      	str	r3, [r2, #0]
+    M0P_SPI->CR_f.SPR1 = 0;
+ 222:	6813      	ldr	r3, [r2, #0]
+ 224:	438b      	bics	r3, r1
+ 226:	6013      	str	r3, [r2, #0]
+    M0P_SPI->CR_f.SPR2 = 0;
+ 228:	6813      	ldr	r3, [r2, #0]
+ 22a:	317e      	adds	r1, #126	@ 0x7e
+ 22c:	438b      	bics	r3, r1
+ 22e:	6013      	str	r3, [r2, #0]
+
+}
+ 230:	bdf7      	pop	{r0, r1, r2, r4, r5, r6, r7, pc}
+ 232:	46c0      	nop			@ (mov r8, r8)
+ 234:	40002000 	.word	0x40002000
+ 238:	40020c00 	.word	0x40020c00
+ 23c:	40020c90 	.word	0x40020c90
+ 240:	40020c94 	.word	0x40020c94
+ 244:	40020c98 	.word	0x40020c98
+ 248:	40000800 	.word	0x40000800
+
+0000024c <delay>:
+	}
+    SPI_Disable();
+
+}	
+
+void delay(uint32_t nTime) {
+ 24c:	b082      	sub	sp, #8
+
+    volatile uint32_t count = nTime;
+ 24e:	9001      	str	r0, [sp, #4]
+	while (count--);
+ 250:	9b01      	ldr	r3, [sp, #4]
+ 252:	1e5a      	subs	r2, r3, #1
+ 254:	9201      	str	r2, [sp, #4]
+ 256:	2b00      	cmp	r3, #0
+ 258:	d1fa      	bne.n	250 <delay+0x4>
+}
+ 25a:	b002      	add	sp, #8
+ 25c:	4770      	bx	lr
+	...
+
+00000260 <main>:
+int main(void) {
+ 260:	b570      	push	{r4, r5, r6, lr}
+    SPI_Init();
+ 262:	f7ff ff51 	bl	108 <SPI_Init>
+    M0P_SPI->CR_f.SPEN = 1;
+ 266:	2340      	movs	r3, #64	@ 0x40
+        M0P_GPIO->P2OUT_f.P24 = 0;           //  out 0
+ 268:	25c4      	movs	r5, #196	@ 0xc4
+ 26a:	2610      	movs	r6, #16
+    M0P_SPI->CR_f.SPEN = 1;
+ 26c:	4c0d      	ldr	r4, [pc, #52]	@ (2a4 <main+0x44>)
+        M0P_GPIO->P2OUT_f.P24 = 0;           //  out 0
+ 26e:	006d      	lsls	r5, r5, #1
+    M0P_SPI->CR_f.SPEN = 1;
+ 270:	6822      	ldr	r2, [r4, #0]
+ 272:	4313      	orrs	r3, r2
+ 274:	6023      	str	r3, [r4, #0]
+        M0P_GPIO->P2OUT_f.P24 = 0;           //  out 0
+ 276:	4b0c      	ldr	r3, [pc, #48]	@ (2a8 <main+0x48>)
+ 278:	595a      	ldr	r2, [r3, r5]
+ 27a:	43b2      	bics	r2, r6
+ 27c:	515a      	str	r2, [r3, r5]
+    M0P_SPI->DATA = data;
+ 27e:	22a1      	movs	r2, #161	@ 0xa1
+ 280:	60e2      	str	r2, [r4, #12]
+        while (M0P_SPI->STAT_f.SPIF == 0) {}
+ 282:	68a2      	ldr	r2, [r4, #8]
+ 284:	0612      	lsls	r2, r2, #24
+ 286:	d5fc      	bpl.n	282 <main+0x22>
+        rs = M0P_SPI->DATA;
+ 288:	68e2      	ldr	r2, [r4, #12]
+    M0P_SPI->DATA = data;
+ 28a:	2252      	movs	r2, #82	@ 0x52
+ 28c:	60e2      	str	r2, [r4, #12]
+        while (M0P_SPI->STAT_f.SPIF == 0) {}
+ 28e:	68a2      	ldr	r2, [r4, #8]
+ 290:	0612      	lsls	r2, r2, #24
+ 292:	d5fc      	bpl.n	28e <main+0x2e>
+        rs = M0P_SPI->DATA;
+ 294:	68e2      	ldr	r2, [r4, #12]
+        M0P_GPIO->P2OUT_f.P24 = 1;           //  out 1
+ 296:	595a      	ldr	r2, [r3, r5]
+        delay(200);
+ 298:	20c8      	movs	r0, #200	@ 0xc8
+        M0P_GPIO->P2OUT_f.P24 = 1;           //  out 1
+ 29a:	4332      	orrs	r2, r6
+ 29c:	515a      	str	r2, [r3, r5]
+        delay(200);
+ 29e:	f7ff ffd5 	bl	24c <delay>
+        M0P_GPIO->P2OUT_f.P24 = 0;           //  out 0
+ 2a2:	e7e8      	b.n	276 <main+0x16>
+ 2a4:	40000800 	.word	0x40000800
+ 2a8:	40020c00 	.word	0x40020c00
+
+000002ac <Reset_Handler>:
+                .weak       Reset_Handler
+                .type       Reset_Handler, %function
+                .globl      Reset_Handler
+Reset_Handler:
+                /* Set stack top pointer. */
+                ldr         r0, =__StackTop
+ 2ac:	4810      	ldr	r0, [pc, #64]	@ (2f0 <Rom_Code+0x10>)
+                mov         sp ,r0
+ 2ae:	4685      	mov	sp, r0
+
+000002b0 <CopyData>:
+ *
+ * All addresses must be aligned to 4 bytes boundary.
+ */
+                /* Copy data from read only memory to RAM. */
+CopyData:
+                ldr         r1, =__etext
+ 2b0:	4910      	ldr	r1, [pc, #64]	@ (2f4 <Rom_Code+0x14>)
+                ldr         r2, =__data_start__
+ 2b2:	4a11      	ldr	r2, [pc, #68]	@ (2f8 <Rom_Code+0x18>)
+                ldr         r3, =__data_end__
+ 2b4:	4b11      	ldr	r3, [pc, #68]	@ (2fc <Rom_Code+0x1c>)
+
+                subs        r3, r2
+ 2b6:	1a9b      	subs	r3, r3, r2
+                ble         CopyLoopExit
+ 2b8:	dd03      	ble.n	2c2 <ClearBss>
+
+000002ba <CopyLoop>:
+CopyLoop:
+                subs        r3, #4
+ 2ba:	3b04      	subs	r3, #4
+                ldr         r0, [r1,r3]
+ 2bc:	58c8      	ldr	r0, [r1, r3]
+                str         r0, [r2,r3]
+ 2be:	50d0      	str	r0, [r2, r3]
+                bgt         CopyLoop
+ 2c0:	dcfb      	bgt.n	2ba <CopyLoop>
+
+000002c2 <ClearBss>:
+ *
+ * Both addresses must be aligned to 4 bytes boundary.
+ */
+                /* Clear BSS section. */
+ClearBss:
+                ldr         r1, =__bss_start__
+ 2c2:	490f      	ldr	r1, [pc, #60]	@ (300 <Rom_Code+0x20>)
+                ldr         r2, =__bss_end__
+ 2c4:	4a0f      	ldr	r2, [pc, #60]	@ (304 <Rom_Code+0x24>)
+
+                movs        r0, 0
+ 2c6:	2000      	movs	r0, #0
+                subs        r2, r1
+ 2c8:	1a52      	subs	r2, r2, r1
+                ble         ClearLoopExit
+ 2ca:	dd02      	ble.n	2d2 <ClearLoopExit>
+
+000002cc <ClearLoop>:
+ClearLoop:
+                subs        r2, #4
+ 2cc:	3a04      	subs	r2, #4
+                str         r0, [r1, r2]
+ 2ce:	5088      	str	r0, [r1, r2]
+                bgt         ClearLoop
+ 2d0:	dcfc      	bgt.n	2cc <ClearLoop>
+
+000002d2 <ClearLoopExit>:
+ClearLoopExit:
+                /* reset NVIC if in rom debug */
+                ldr         r0, =0x20000000
+ 2d2:	480d      	ldr	r0, [pc, #52]	@ (308 <Rom_Code+0x28>)
+                ldr         r2, =0x0
+ 2d4:	4a0d      	ldr	r2, [pc, #52]	@ (30c <Rom_Code+0x2c>)
+                movs        r1, #0
+ 2d6:	2100      	movs	r1, #0
+                add         r1, pc, #0
+ 2d8:	a100      	add	r1, pc, #0	@ (adr r1, 2dc <ClearLoopExit+0xa>)
+                cmp         r1, r0
+ 2da:	4281      	cmp	r1, r0
+                bls         Rom_Code
+ 2dc:	d900      	bls.n	2e0 <Rom_Code>
+                /* ram code base address. */
+                add         r2, r0, r2
+ 2de:	4402      	add	r2, r0
+
+000002e0 <Rom_Code>:
+Rom_Code:
+                /* reset vector table address */
+                ldr         r0, =0xE000ED08
+ 2e0:	480b      	ldr	r0, [pc, #44]	@ (310 <Rom_Code+0x30>)
+                str         r2, [r0]
+ 2e2:	6002      	str	r2, [r0, #0]
+                /* Call the clock system initialization function. */
+                bl          SystemInit
+ 2e4:	f000 f818 	bl	318 <SystemInit>
+                /* Call static constructors */
+                //bl          __libc_init_array
+                /* Call the application's entry point. */
+                bl          main
+ 2e8:	f7ff ffba 	bl	260 <main>
+                bx          lr
+ 2ec:	4770      	bx	lr
+ 2ee:	0000      	.short	0x0000
+                ldr         r0, =__StackTop
+ 2f0:	20000220 	.word	0x20000220
+                ldr         r1, =__etext
+ 2f4:	0000036c 	.word	0x0000036c
+                ldr         r2, =__data_start__
+ 2f8:	20000000 	.word	0x20000000
+                ldr         r3, =__data_end__
+ 2fc:	20000004 	.word	0x20000004
+                ldr         r1, =__bss_start__
+ 300:	20000004 	.word	0x20000004
+                ldr         r2, =__bss_end__
+ 304:	20000020 	.word	0x20000020
+                ldr         r0, =0x20000000
+ 308:	20000000 	.word	0x20000000
+                ldr         r2, =0x0
+ 30c:	00000000 	.word	0x00000000
+                ldr         r0, =0xE000ED08
+ 310:	e000ed08 	.word	0xe000ed08
+
+00000314 <ADC_IRQHandler>:
+;<h> Default handler start.
+*/
+                .section    .text.Default_Handler, "ax", %progbits
+                .align      2
+Default_Handler:
+                b           .
+ 314:	e7fe      	b.n	314 <ADC_IRQHandler>
+ 316:	46c0      	nop			@ (mov r8, r8)
+
+00000318 <SystemInit>:
+ ******************************************************************************/
+void SystemInit(void)
+{
+    //hcr 24MHz manual trim.
+	// set RCH = 24MHz
+    M0P_CLOCK->RCH_CR_f.TRIM = (*((volatile uint16_t*) (0x00100C00ul)));
+ 318:	4b08      	ldr	r3, [pc, #32]	@ (33c <SystemInit+0x24>)
+ 31a:	4909      	ldr	r1, [pc, #36]	@ (340 <SystemInit+0x28>)
+ 31c:	881a      	ldrh	r2, [r3, #0]
+ 31e:	68cb      	ldr	r3, [r1, #12]
+ 320:	0552      	lsls	r2, r2, #21
+ 322:	0adb      	lsrs	r3, r3, #11
+ 324:	0d52      	lsrs	r2, r2, #21
+ 326:	02db      	lsls	r3, r3, #11
+ 328:	4313      	orrs	r3, r2
+ 32a:	60cb      	str	r3, [r1, #12]
+    while (!M0P_CLOCK->RCH_CR_f.STABLE);
+ 32c:	68cb      	ldr	r3, [r1, #12]
+ 32e:	051b      	lsls	r3, r3, #20
+ 330:	d5fc      	bpl.n	32c <SystemInit+0x14>
+	SystemCoreClock = 24000000;
+ 332:	4b04      	ldr	r3, [pc, #16]	@ (344 <SystemInit+0x2c>)
+ 334:	4a04      	ldr	r2, [pc, #16]	@ (348 <SystemInit+0x30>)
+ 336:	601a      	str	r2, [r3, #0]
+
+    SystemCoreClockUpdate();
+	  
+	_HidePinInit();
+}
+ 338:	4770      	bx	lr
+ 33a:	46c0      	nop			@ (mov r8, r8)
+ 33c:	00100c00 	.word	0x00100c00
+ 340:	40002000 	.word	0x40002000
+ 344:	20000000 	.word	0x20000000
+ 348:	016e3600 	.word	0x016e3600
+
+0000034c <_init>:
+ 34c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 34e:	46c0      	nop			@ (mov r8, r8)
+ 350:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 352:	bc08      	pop	{r3}
+ 354:	469e      	mov	lr, r3
+ 356:	4770      	bx	lr
+
+00000358 <_fini>:
+ 358:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 35a:	46c0      	nop			@ (mov r8, r8)
+ 35c:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 35e:	bc08      	pop	{r3}
+ 360:	469e      	mov	lr, r3
+ 362:	4770      	bx	lr
