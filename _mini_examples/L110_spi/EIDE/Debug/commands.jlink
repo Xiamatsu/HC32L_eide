@@ -1,0 +1,6 @@
+r
+halt
+loadfile "c:\ACHIP\Xiamatsu\HC32L_eide\_mini_examples\L110_spi\EIDE\Debug\spi_test.hex"
+r
+go
+exit

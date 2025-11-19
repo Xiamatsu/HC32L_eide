@@ -8,12 +8,12 @@
             "name": "pyocd",
             "request": "launch",
             "type": "cortex-debug",
-            "targetId": "HC32L110C6PA",
+            "targetId": "hc32l110c6pa",
             "runToEntryPoint": "main",
             "showDevDebugOutput": "none",
             "servertype": "pyocd",
             "cmsisPack": "..\\..\\..\\Packs\\HC32L110_DFP.pack",
-            "svdFile": "..\\..\\..\\SVD\\HC32L110.svd"
+            "svdFile": "..\\..\\..\\SVD\\HC32L110C.svd"
         },
         {
             "cwd": "${workspaceRoot}",
@@ -28,7 +28,7 @@
                 "target/hc32l110.cfg"
             ],
             "toolchainPrefix": "arm-none-eabi",
-            "svdFile": "..\\..\\..\\SVD\\HC32L110.svd"
+            "svdFile": "..\\..\\..\\SVD\\HC32L110C.svd"
         },
         {
             "cwd": "${workspaceRoot}",
@@ -39,9 +39,9 @@
             "interface": "swd",
             "executable": "${ProjectName}.elf",
             "runToEntryPoint": "main",
-            "device": "HC32L110C6PA",
+            "device": "HC32L110x6",
             "toolchainPrefix": "arm-none-eabi",
-            "svdFile": "..\\..\\..\\SVD\\HC32L110.svd"
+            "svdFile": "..\\..\\..\\SVD\\HC32L110C.svd"
         }
     ]
 }
