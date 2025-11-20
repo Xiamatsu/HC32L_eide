@@ -23,7 +23,7 @@
   - настроен pyocd 
     ( прошивается, отладку надо проверять настройки )  
 
-Описание контроллеров для JLink в папке JLinkDevices<br>
+Описание контроллеров для JLink в папке JLinkDevices
 скопировать содержимое папки в  <USER>\AppData\Roaming\SEGGER\JLinkDevices
 ```
 
