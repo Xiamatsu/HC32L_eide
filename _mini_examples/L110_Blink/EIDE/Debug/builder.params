@@ -2,12 +2,12 @@
     "name": "Blink34",
     "target": "Debug",
     "toolchain": "GCC",
-    "toolchainLocation": "C:\\Users\\User\\.eide\\tools\\gcc_arm",
+    "toolchainLocation": "c:\\xpack\\xpack-arm-none-eabi-gcc-14.2.1-1.1",
     "toolchainCfgFile": "c:\\Users\\User\\.vscode\\extensions\\cl.eide-3.26.1\\res\\data\\models/arm.gcc.model.json",
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 16,
-    "rootDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE",
+    "rootDir": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE",
     "dumpPath": "Debug",
     "outDir": "Debug",
     "incDirs": [
@@ -67,20 +67,20 @@
             "output-format": "elf",
             "remove-unused-input-sections": true,
             "link-scatter": [
-                "c:/ACHIP/Xiamatsu/HC32L_eide/Drivers/Device/LDScript/hc32l110.ld"
+                "c:/MCU/HC32L_eide/Drivers/Device/LDScript/hc32l110.ld"
             ]
         }
     },
     "env": {
-        "workspaceFolder": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE",
+        "workspaceFolder": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE",
         "workspaceFolderBasename": "EIDE",
-        "OutDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE\\.\\Debug",
+        "OutDir": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE\\.\\Debug",
         "OutDirRoot": ".",
         "OutDirBase": ".\\Debug",
         "ProjectName": "Blink34",
         "ConfigName": "Debug",
-        "ProjectRoot": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE",
-        "ExecutableName": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE\\.\\Debug\\Blink34",
+        "ProjectRoot": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE",
+        "ExecutableName": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_Blink\\EIDE\\.\\Debug\\Blink34",
         "ChipPackDir": "",
         "ChipName": "",
         "SYS_Platform": "win32",
@@ -93,7 +93,7 @@
         "EIDE_BINARIES_VER": "12.1.1",
         "EIDE_MSYS": "C:\\Users\\User\\.eide\\bin\\builder\\msys\\bin",
         "EIDE_PY3_CMD": "C:\\Users\\User\\.eide\\bin\\python36\\python3.exe",
-        "ToolchainRoot": "C:\\Users\\User\\.eide\\tools\\gcc_arm"
+        "ToolchainRoot": "c:\\xpack\\xpack-arm-none-eabi-gcc-14.2.1-1.1"
     },
     "sysPaths": []
 }

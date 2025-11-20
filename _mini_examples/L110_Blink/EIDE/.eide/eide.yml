@@ -75,8 +75,8 @@ targets:
         baseAddr: ""
         bin: ""
         cpuInfo:
-          cpuName: HC32L110C6PA
-          vendor: null
+          cpuName: HC32L110x6
+          vendor: HDSC
         otherCmds: ""
         proType: 1
         speed: 1000
@@ -92,7 +92,7 @@ targets:
         otherCmds: --pack=..\..\..\Packs\HC32L110_DFP.pack
         speed: 4M
         targetName: HC32L110C6PA
-    uploader: pyOCD
+    uploader: JLink
   Release:
     cppPreprocessAttrs:
       defineList:
@@ -146,8 +146,8 @@ targets:
         baseAddr: ""
         bin: ""
         cpuInfo:
-          cpuName: HC32L110C6PA
-          vendor: null
+          cpuName: HC32L110x6
+          vendor: HDSC
         otherCmds: ""
         proType: 1
         speed: 1000
@@ -163,4 +163,4 @@ targets:
         otherCmds: --pack=..\..\..\Packs\HC32L110_DFP.pack
         speed: 4M
         targetName: HC32L110C6PA
-    uploader: pyOCD
+    uploader: JLink

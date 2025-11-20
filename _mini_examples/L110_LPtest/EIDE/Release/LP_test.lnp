@@ -1,0 +1,5 @@
+-L../../../Drivers/Device/Source -mcpu=cortex-m0plus -mthumb -T c:/MCU/HC32L_eide/_mini_examples/L110_LPtest/System/hc32l110.ld -Wl,--gc-sections -Wl,--print-memory-usage --specs=nano.specs -Wl,--no-warn-rwx-segments
+-Wl,-Map=./Release/LP_test.map
+-o ./Release/LP_test.elf ./Release/.obj/__/Src/main.o
+./Release/.obj/__/System/startup_hc32l110.o
+./Release/.obj/__/System/system_hc32l110.o -lm
