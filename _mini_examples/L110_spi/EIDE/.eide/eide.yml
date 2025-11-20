@@ -92,7 +92,7 @@ targets:
         otherCmds: --pack=..\..\..\Packs\HC32L110_DFP.pack
         speed: 4M
         targetName: hc32l110c6pa
-    uploader: pyOCD
+    uploader: JLink
   Release:
     cppPreprocessAttrs:
       defineList:
@@ -164,4 +164,4 @@ targets:
         otherCmds: --pack=..\..\..\Packs\HC32L110_DFP.pack
         speed: 4M
         targetName: HC32L110C6PA
-    uploader: pyOCD
+    uploader: JLink

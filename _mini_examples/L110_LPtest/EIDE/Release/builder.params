@@ -7,7 +7,7 @@
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 16,
-    "rootDir": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE",
+    "rootDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE",
     "dumpPath": "Release",
     "outDir": "Release",
     "incDirs": [
@@ -68,20 +68,20 @@
             "output-format": "elf",
             "remove-unused-input-sections": true,
             "link-scatter": [
-                "c:/MCU/HC32L_eide/_mini_examples/L110_LPtest/System/hc32l110.ld"
+                "c:/ACHIP/Xiamatsu/HC32L_eide/_mini_examples/L110_LPtest/System/hc32l110.ld"
             ]
         }
     },
     "env": {
-        "workspaceFolder": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE",
+        "workspaceFolder": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE",
         "workspaceFolderBasename": "EIDE",
-        "OutDir": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE\\.\\Release",
+        "OutDir": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE\\.\\Release",
         "OutDirRoot": ".",
         "OutDirBase": ".\\Release",
         "ProjectName": "LP_test",
         "ConfigName": "Release",
-        "ProjectRoot": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE",
-        "ExecutableName": "c:\\MCU\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE\\.\\Release\\LP_test",
+        "ProjectRoot": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE",
+        "ExecutableName": "c:\\ACHIP\\Xiamatsu\\HC32L_eide\\_mini_examples\\L110_LPtest\\EIDE\\.\\Release\\LP_test",
         "ChipPackDir": "",
         "ChipName": "",
         "SYS_Platform": "win32",

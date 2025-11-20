@@ -39,7 +39,7 @@
             "interface": "swd",
             "executable": "${ProjectName}.elf",
             "runToEntryPoint": "main",
-            "device": "HC32L110C6PA",
+            "device": "HC32L110x6",
             "toolchainPrefix": "arm-none-eabi",
             "svdFile": "..\\..\\..\\SVD\\HC32L110.svd"
         }

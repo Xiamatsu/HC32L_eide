@@ -56,7 +56,7 @@
           "label": "jlink download",
           "command": "JLink.exe",
           "args": [
-            "-device", "HC32L110C6PA",
+            "-device", "HC32L110x6",
             "-if", "SWD",
             "-speed", "4000",
             "-autoconnect", "1",

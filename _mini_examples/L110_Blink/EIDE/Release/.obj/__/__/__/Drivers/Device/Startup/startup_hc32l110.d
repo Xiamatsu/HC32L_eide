@@ -1,2 +1,0 @@
-Release/.obj/__/__/__/Drivers/Device/Startup/startup_hc32l110.o: \
- ../../../Drivers/Device/Startup/startup_hc32l110.s

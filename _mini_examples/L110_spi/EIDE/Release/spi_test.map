@@ -602,17 +602,17 @@ LOAD linker stubs
  .debug_line    0x000003c7       0x90 ./Release/.obj/__/System/startup_hc32l110.o
  .debug_line    0x00000457      0x1b0 ./Release/.obj/__/System/system_hc32l110.o
 
-.debug_str      0x00000000     0x137f
- .debug_str     0x00000000     0x137f ./Release/.obj/__/Src/main.o
-                               0x1353 (size before relaxing)
- .debug_str     0x0000137f       0x6a ./Release/.obj/__/System/startup_hc32l110.o
- .debug_str     0x0000137f      0x5b4 ./Release/.obj/__/System/system_hc32l110.o
+.debug_str      0x00000000     0x138a
+ .debug_str     0x00000000     0x138a ./Release/.obj/__/Src/main.o
+                               0x135e (size before relaxing)
+ .debug_str     0x0000138a       0x75 ./Release/.obj/__/System/startup_hc32l110.o
+ .debug_str     0x0000138a      0x5bf ./Release/.obj/__/System/system_hc32l110.o
 
 .debug_frame    0x00000000       0xc4
  .debug_frame   0x00000000       0x94 ./Release/.obj/__/Src/main.o
  .debug_frame   0x00000094       0x30 ./Release/.obj/__/System/system_hc32l110.o
 
 .debug_line_str
-                0x00000000       0x4e
+                0x00000000       0x59
  .debug_line_str
-                0x00000000       0x4e ./Release/.obj/__/System/startup_hc32l110.o
+                0x00000000       0x59 ./Release/.obj/__/System/startup_hc32l110.o
